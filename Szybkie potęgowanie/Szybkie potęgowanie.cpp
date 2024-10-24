@@ -1,24 +1,28 @@
 #include <iostream>
 using namespace std;
 
+int SzybkiePotRekurencyjne(int a, int b) {
+	if(b==0){
+		return 1;
+	}else if(b%2==1){
+		return a*SzybkiePotRekurencyjne(a, b-1);
+	}
+	
+	int win = SzybkiePotRekurencyjne(a, b/2);
+	return win*win;
+}
+
 int main() {
 	int a = 1;
 	int n = 1;
-	int wynik = 1;
 	cout << "Podaj baze (a): ";
 	cin >> a;
 	cout << "Podaj wykladnik (n): ";
 	cin >> n;
+	int wynik = SzybkiePotRekurencyjne(a, n);
 	
-	while(n>0){
-		if(n%2==1){
-			wynik=wynik*a;
-			a=a*a;
-			n=n/2;
-		}
-		
-	}
-	cout << a << "^" << n << "= " << wynik;
+	
+	cout << a << "^" << n << " = " << wynik;
 	
 
 return 0;
