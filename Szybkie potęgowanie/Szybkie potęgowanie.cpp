@@ -9,7 +9,7 @@ int SzybkiePotRekurencyjne(int a, int b) {
 	}
 	
 	int win = SzybkiePotRekurencyjne(a, b/2);
-	return win;
+	return win*win;
 }
 
 int main() {
