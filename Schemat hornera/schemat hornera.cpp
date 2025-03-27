@@ -5,7 +5,7 @@ using namespace std;
 int horner(int wsp[], int st, int x) {
     if (st == 0)
         return wsp[0];
-    return x * horner(wsp, st - 1, x) + wsp[st]; // K3
+    return x * horner(wsp, st - 1, x) + wsp[st];
 }
 
 int main() {
